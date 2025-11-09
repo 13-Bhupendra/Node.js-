@@ -1,25 +1,19 @@
-//! core module => fs
-const fs =  require("fs")
+//Create a basic HTTP server that returns “Server is Running Successfully”.
 
-fs.writeFileSync("note.txt" , "welcome to backend part-1");
-
-const data = fs.readFileSync("note.txt" , "utf8")
-console.log(data);
-
-
-//! core module => PATH 
-const path = require("path")
-
-console.log(path.basename(__filename));
-console.log(path.dirname(__dirname))
-console.log(path.join( __dirname ,"public" , "note.txt"));
-
-
-//! core module => HTTP
 const http = require("http")
 
-const productData = [
-  {
+const server = http.createServer((res , req)=>{
+    req.writeHead(200 , {"content-type" : "text/plain"});
+    req.end("Server is Running Successfully !")
+})
+
+server.listen(7000 , ()=>{
+    console.log("server is running at  http://localhost:7000")
+})
+
+
+// Create a server that returns JSON data when accessed from the browser.
+const data = [  {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     "price": 109.95,
@@ -57,12 +51,33 @@ const productData = [
   }
 ]
 
-const server = http.createServer((req, res)=> {
-    res.writeHead(200 , {"content-type" :"application/json"});
-    res.write(JSON.stringify(productData))
-    res.end();
-});
+const JSONserver = http.createServer((res,req)=>{
+    req.writeHead(200 , {"content-type" : "application/json"});
+    req.write(JSON.stringify(data))
+    req.end();
+})
 
-server.listen(7000 , ()=>{
-    console.log("server is running at  http://localhost:7000");
+JSONserver.listen(7001,()=>{
+    console.log("server is running at http://localhost:7001");
+})
+
+
+// Create a server that writes the current date and time in a file every time a GET request is received.
+const now = new Date()
+const currentDate = now.toLocaleDateString();
+const currentTime = now.toLocaleTimeString();
+
+const data2 = [{
+    currentDate : currentDate,
+    currentTime:currentTime
+}]
+
+const currentDataAndTimeServer = http.createServer((res , req)=>{
+    req.writeHead(200, {"content-type" : "application/json"});
+    req.write(JSON.stringify(data2));
+    req.end();
+})
+
+currentDataAndTimeServer.listen(7002 , ()=>{
+    console.log("server is running at http://localhost:7002");
 })
