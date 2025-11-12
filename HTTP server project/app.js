@@ -24,6 +24,17 @@ const path = require("path");
 // });
 
 const server = http.createServer((req, res) => {
+
+  const logPath = path.join(__dirname , "logs" , "server.log");
+  const date = new Date()
+  const logsEnter = `${date.toLocaleString()}-${req.url}\n`
+
+  fs.appendFile(logPath , logsEnter ,(err)=>{
+    if(err){
+      console.log("Error ! " , err)
+    }
+  })
+
   let filepath = "";
 
   if (req.url === "/") {
