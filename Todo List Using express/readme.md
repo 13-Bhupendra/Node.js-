@@ -1,5 +1,5 @@
 
-# 📝 Todo App – Full Stack MERN Todo Manager
+# 📝 Todo App
 
 A clean and simple Todo Management Application built using **React (Frontend)** and **Node.js + Express + MongoDB (Backend)**.  
 This app allows users to **add, edit, delete, and manage todos** with due dates and timestamps.
@@ -84,4 +84,5 @@ npm install express
 
 This Todo App is perfect for learning **React CRUD**, API integration, and clean UI design.  
 If you like it, ⭐ star the repo!
+
 
