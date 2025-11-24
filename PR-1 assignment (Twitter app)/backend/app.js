@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename)
 const filePath = path.join(__dirname , "data" , "tweet.json")
 const logsPath = path.join(__dirname , "logs" , "server.log") 
 
-// Middleware implement request saves
+// Middleware implement
 // app.use((req, res ,next)=>{
 //     const date = new Date().toLocaleDateString();
 //     const time = new Date().toLocaleTimeString();
