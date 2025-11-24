@@ -1,0 +1,30 @@
+.menulist
+{
+    width: 60%;
+}
+
+.menulist ul li 
+{
+    list-style: none;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/*button*/
+.button button
+{
+    height: 55px;
+    width: 100%;
+    padding: 10px 40px;
+    background-color: #1DA1F2;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    margin-top: 30px;
+}
