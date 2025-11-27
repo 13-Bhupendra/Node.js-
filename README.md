@@ -1,2 +1,2 @@
 # Node.js
-Node.js backend tech
+Node.js backend
