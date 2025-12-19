@@ -1,2 +1,2 @@
 # Node.js
-Node.js backend project
+Node.js backend
